@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <h1>Fruits show page</h1>
+        <%= fruit.name %> is <%= fruit.color %>
+        <% if (fruit.readyToEat === true) { %>
+            It is ready to eat
+        <% } else { %>
+            It is not ready to eat
+        <% } %>
+
+        <h3>It is available in Seasons:</h3>
+        <% for (let i=0; i< fruit.Seasons.length; i++){ %>
+            <li>
+                <%= fruit.Seasons[i].name %>
+            </li>
+            <br>
+        <% } %>
+
+        <form action="/fruits/<%=fruit.id %>?_method=DELETE" method="POST">
+            <input type="submit" value="DELETE <%= fruit.name %>" />
+        </form>
+    </body>
+</html>    
